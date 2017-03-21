@@ -8,8 +8,8 @@ if($_POST && isset($_FILES['my_file']))
     //Capture POST data from HTML form and Sanitize them, 
     $sender_name    = filter_var($_POST["sender_name"], FILTER_SANITIZE_STRING); //sender name
     $reply_to_email = filter_var($_POST["sender_email"], FILTER_SANITIZE_STRING); //sender email used in "reply-to" header
-    $subject        = filter_var($_POST["sender-subject"], FILTER_SANITIZE_STRING); //get subject from HTML form
-    $message        = filter_var($_POST["sender-message"], FILTER_SANITIZE_STRING); //message
+    $subject        = filter_var('Resume', FILTER_SANITIZE_STRING); //get subject from HTML form
+    $message        = filter_var('Test Message', FILTER_SANITIZE_STRING); //message
     
     /* //don't forget to validate empty fields 
     if(strlen($sender_name)<1){

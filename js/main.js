@@ -362,18 +362,18 @@ $(document).ready(function(){
 
     //Career Attachment
 
-    $('#resumeUploadSubmit').click(function (e) {
+    /*$('#resumeUploadSubmit').click(function (e) {
 
         //stop the form from being submitted
-        e.preventDefault();
+        e.preventDefault();*/
 
         /* declare the variables, var error is the variable that we use on the end
         to determine if there was an error or not */
-        var error = false;
+        /*var error = false;
         var name = $('#sender_name').val();
         var email = $('#sender_email').val();
         var subject = $('#sender-subject').val();
-        var message = $('#sender-message').val();
+        var message = $('#sender-message').val();*/
 
         /* in the next section we do the checking by using VARIABLE.length
         where VARIABLE is the variable we are checking (like name, email),
@@ -386,7 +386,7 @@ $(document).ready(function(){
         The only difference from these checks is the email checking, we have
         email.indexOf('@') which checks if there is @ in the email input field.
         This JavaScript function will return -1 if no occurrence have been found.*/
-        if (name.length == 0) {
+        /*if (name.length == 0) {
             var error = true;
             $('#sender_name').css("border-color", "#D8000C");
         } else {
@@ -420,7 +420,7 @@ $(document).ready(function(){
                 'value': 'Sending...'
             });
 
-            $('#resumeUploadForm').submit();
+            $('#resumeUploadForm').submit();*/
 
             /* using the jquery's post(ajax) function and a lifesaver
             function serialize() which gets all the data from the form
@@ -440,8 +440,8 @@ $(document).ready(function(){
                     $('#resumeUploadSubmit').removeAttr('disabled').attr('value', 'Send The Message');
                 }
             });*/
-        }
-    });
+        /*}
+    });*/
 	
 });
 
