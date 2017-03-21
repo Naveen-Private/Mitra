@@ -1569,9 +1569,9 @@ textarea.form-control {
     text-align: left !important;
 }
 
-.success{
+.success,.resume-success{
     display: none;
 }
-.error{
+.error,.resume-error{
     display: none;
 }

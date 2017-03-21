@@ -93,10 +93,13 @@
                     </ul>
                 </nav>
 				<!-- /main nav -->
-				<!-- <div id="msc-logo" style="height:50px;width:50px;position:absolute;top:25%;right:8%;">
+				<div id="msc-logo" style="height:50px;width:50px;position:absolute;top:20%;right:6%;">
 					<img src="img/msc.png" alt="MSCLogo" style="max-height:100%;max-width:100%;"/>
-				</div> -->
+				</div>
             </div>
+            <!-- <div id="msc-logo" style="height: 63px; width: 80px; position: absolute; top: 0%; right: 0%;">
+				<img src="img/logo_msc2.gif" alt="MSCLogo" style="max-height:100%;max-width:100%;">
+			</div> -->
         </header>
         <!--
         End Fixed Navigation
@@ -288,7 +291,9 @@
 								<figcaption class="mask">
 									<h3 style="color:#F7B23D;">Newgen</h3>
 									<ul class="newgenProductsClass">
-										<li><a target="_blank" href="newgenSolutions.html">Newgen Solutions</a></li>
+										<li><a target="_blank" href="newgenSolutions.html">BPM Solutions</a></li><br/>
+										<li><a target="_blank" href="newgenSolutions.html">Omniscan</a></li><br/>
+										<li><a target="_blank" href="newgenSolutions.html">IBPS</a></li><br/>
 									</ul>
 									<a target="_blank" href="http://newgensoft.com/" class="productsReadMore">Read More..</a>
 								</figcaption>
@@ -335,7 +340,7 @@
 							<li class="portfolio-item col-sm-12 col-md-4 col-lg-4" style="height: 290px;">
 								<!-- <img src="img/researchanddevlopment/projectx.jpg" class="img-responsive" alt="Project-X" style="margin: auto;max-height: 100%;"> -->
 								<figcaption class="mask">
-									<h3 style="color:#F7B23D;">Project - X</h3>
+									<h3 style="color:#F7B23D;">Onecard</h3>
 									<ul class="projectxResearchClass">
 										<li>A new integrated one loyalty system that seamlessly handles all your loyalty points and claims.Towards One Platform</li>
 									</ul>
@@ -384,36 +389,33 @@
 							</div>
 						</div>
 					
-						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s">
+						<!-- <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s">
 							<div class="service-item">
 								<div class="service-icon">
 									<i class="fa fa-user fa-3x"></i>
 								</div>
 								<h3>Customer Relationship Management</h3>
-								<!-- <p>Customer Relationship Management. </p> -->
 							</div>
-						</div>
+						</div> -->
 					
-						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
+						<!-- <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
 							<div class="service-item">
 								<div class="service-icon">
 									<i class="fa fa-briefcase fa-3x"></i>
 								</div>
 								
 								<h3>Enterprised Resources Planning Solution</h3>
-								<!-- <p>Enterprised Resources Planning Solution. </p> -->							
 							</div>
-						</div>
+						</div> -->
 						
-						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" style="margin-top:20px;">
+						<!-- <div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" style="margin-top:20px;">
 							<div class="service-item">
 								<div class="service-icon">
 									<i class="fa fa-users fa-3x"></i>
 								</div>
 								<h3>Human Resources Information System</h3>
-								<!-- <p>Human Resources Information System. </p> -->
 							</div>
-						</div>
+						</div> -->
 					
 						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s" style="margin-top:20px;">
 							<div class="service-item">
@@ -435,7 +437,7 @@
 							</div>
 						</div>
 					
-						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s" style="margin-top:20px;">
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s" style="margin-top:20px;clear: both;">
 							<div class="service-item">
 								<div class="service-icon">
 									<i class="fa fa-random fa-3x"></i>
@@ -445,7 +447,6 @@
 								<!-- <p>Fibre Cable Installation. </p> -->							
 							</div>
 						</div>
-						<div style="clear: both;"></div>
 						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s">
 							<div class="service-item">
 								<div class="service-icon">
@@ -550,8 +551,51 @@
 					
 						<div class="sec-title text-center wow animated fadeInDown">
 							<h2>Careers</h2>
+							<p>Please send your resume.</p>
 						</div>
-						<h4>Send your resume to <a href="mailto:ambigah@mitraitsolutions.com">ambigah@mitraitsolutions.com</a>  to apply</h4>
+						<!-- <h4>Please fill your details and upload your resume</h4> -->
+						<form enctype="multipart/form-data" class="form-horizontal" method="POST" action="emailAttachment.php" id="resumeUploadForm">
+							<div class="form-group">
+						    	<label class="control-label col-sm-2">Your Name </label> 
+						    	<div class="col-sm-10">
+						    		<input class="form-control" type="text" name="sender_name" id="sender_name" /> 
+						    	</div>
+						    </div>
+						    <div class="form-group">
+						    	<label class="control-label col-sm-2">Your Email </label> 
+						    	<div class="col-sm-10">
+						    		<input class="form-control" type="email" name="sender_email" id="sender_email" />
+						    	</div>
+						    </div>
+						    <div class="form-group">
+						    	<label class="control-label col-sm-2">Subject </label>
+						    	<div class="col-sm-10">
+						    		<input class="form-control" type="text" name="sender-subject" id="sender-subject" />
+						    	</div>  
+						    </div>
+						    <div class="form-group">
+						    	<label class="control-label col-sm-2">Message</label> 
+						    	<div class="col-sm-10">
+						    		<textarea class="form-control" name="sender-message" id="sender-message"></textarea>
+						    	</div> 
+						    </div>
+						    <div class="form-group">
+						    	<label class="control-label col-sm-2">Upload Resume </label>
+						    	<div class="col-sm-10">
+						    		<input class="form-control" class="form-control" type="file" name="my_file" />
+						    	</div>
+						    </div>
+						    <div id="resume-upload-success" class="resume-success">
+								Thank you. The Mailman is on His Way :)
+							</div>
+							
+							<div id="resume-upload-fail" class="resume-error">
+								Sorry, don't know what happened. Try later :(
+							</div>
+						    <div class="form-group" style="text-align: center;" id="resumeUploadSubmitDiv">
+						    	<button type="submit" id="resumeUploadSubmit" class="btn btn-primary">Submit</button>
+						    </div>
+						</form>
 						<article class="col-md-6 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="200ms" style="margin-bottom: 15px;">
 							<div class="member-photo service-block text-center">
 								<div class="text-center" style="width: 300px;height: 280px;margin:auto;">
@@ -710,9 +754,9 @@
 								<p><i class="fa fa-phone"></i>Phone: +91 9901 9652 62 </p>
 								<p><i class="fa fa-fax"></i>Fax: 0091 80 4112 2860 </p>
 								<h4>USA</h4>
-								<p><i class="fa fa-pencil"></i>1155 Herndon Parkway,<span>Suite 910 Herndon,</span> <span> VA 20170 </span>
-								<p><i class="fa fa-phone"></i>Phone: (+1) 540-765-5319 </p>
-								<p><i class="fa fa-fax"></i>Fax: (+1) 703-743-0127 </p>
+								<p><i class="fa fa-pencil"></i>2458 SILVERTHRONDR,<span>CHARLOTTE NC 28273,</span>
+								<p><i class="fa fa-phone"></i>Phone: (+1) 704-303-9168 </p>
+								<p><i class="fa fa-mobile"></i>Cell: (+1) 908-344-0738 </p>
 							</address>
 						</div>
 			

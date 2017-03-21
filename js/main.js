@@ -13,19 +13,24 @@ jQuery(window).load(function(){
 	var isiPad = /ipad/i.test(navigator.userAgent.toLowerCase());
 	var isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
 	var isWindowsPhone = /windows phone/i.test(navigator.userAgent.toLowerCase());
-	if(isiDevice || isAndroid || isWindowsPhone){
-		/* $("#msc-logo").css({"right":"22%","top":"0"});
-		$("#navigation").css({"padding":"10px"}); */
-		/* $(".navbar-brand a").css({"height":"50px","width":"50px;","font-size":"15px"});
-		$(".navbar-brand a img").css({"max-height":"100%","max-width":"100%;"}); */
-		//$(".navbar-brand a").css({"font-size":"15px"});
+	if(isiDevice || isAndroid){
+		 $("#msc-logo").css({"right":"17%"});
+         $('.navbar-brand').css({'font-size':'19px','padding-left':'0px'});
 	} else {
-		//$("#msc-logo").css({"right":"8%","top":"25%","height":"50px","width":"50px"});
-		//$(".navbar-brand a").css({"height":"50px","width":"50px;"});
-		/* $(".navbar-brand a img").css({"height":"50px"});
-		$("#navigation").css({"padding":"20px 0"}); */
-		//$(".navbar-brand a img").css({"display":"block"});
+		$("#msc-logo").css({"right":"4%"});
+        $('.navbar-brand').css({'font-size':'20px','padding-left':'15px'});
 	}
+
+    $(document).on('click','button.navbar-toggle',function(e){
+        e.preventDefault();
+        var isAreaExpanded = $('.navbar-collapse').attr('aria-expanded');
+        if(isAreaExpanded == "true"){
+            $("#msc-logo").css({"top":"4%"});
+        } else {
+            $("#msc-logo").css({"top":"20%"});
+        }
+        
+    });
 	/* if(isiPad){
 		$("#main-nav").css({"margin-right":"9%"});
 		$("#msc-logo").css({"right":"2%"});
@@ -203,9 +208,11 @@ $(document).ready(function(){
         if ($(window).scrollTop() > 400) {
             $(".navbar-brand a").css("color","#fff");
             $("#navigation").removeClass("animated-header");
+            $('#msc-logo').css('top','5%');
         } else {
             $(".navbar-brand a").css("color","inherit");
             $("#navigation").addClass("animated-header");
+            $('#msc-logo').css('top','20%');
         }
     });
 	
@@ -350,6 +357,89 @@ $(document).ready(function(){
                     $('#contact-submit').removeAttr('disabled').attr('value', 'Send The Message');
                 }
             });
+        }
+    });
+
+    //Career Attachment
+
+    $('#resumeUploadSubmit').click(function (e) {
+
+        //stop the form from being submitted
+        e.preventDefault();
+
+        /* declare the variables, var error is the variable that we use on the end
+        to determine if there was an error or not */
+        var error = false;
+        var name = $('#sender_name').val();
+        var email = $('#sender_email').val();
+        var subject = $('#sender-subject').val();
+        var message = $('#sender-message').val();
+
+        /* in the next section we do the checking by using VARIABLE.length
+        where VARIABLE is the variable we are checking (like name, email),
+        length is a JavaScript function to get the number of characters.
+        And as you can see if the num of characters is 0 we set the error
+        variable to true and show the name_error div with the fadeIn effect. 
+        if it's not 0 then we fadeOut the div( that's if the div is shown and
+        the error is fixed it fadesOut. 
+        
+        The only difference from these checks is the email checking, we have
+        email.indexOf('@') which checks if there is @ in the email input field.
+        This JavaScript function will return -1 if no occurrence have been found.*/
+        if (name.length == 0) {
+            var error = true;
+            $('#sender_name').css("border-color", "#D8000C");
+        } else {
+            $('#sender_name').css("border-color", "#666");
+        }
+        if (email.length == 0 || email.indexOf('@') == '-1') {
+            var error = true;
+            $('#sender_email').css("border-color", "#D8000C");
+        } else {
+            $('#sender_email').css("border-color", "#666");
+        }
+        if (subject.length == 0) {
+            var error = true;
+            $('#sender-subject').css("border-color", "#D8000C");
+        } else {
+            $('#sender-subject').css("border-color", "#666");
+        }
+        if (message.length == 0) {
+            var error = true;
+            $('#sender-message').css("border-color", "#D8000C");
+        } else {
+            $('#sender-message').css("border-color", "#666");
+        }
+
+        //now when the validation is done we check if the error variable is false (no errors)
+        if (error == false) {
+            //disable the submit button to avoid spamming
+            //and change the button text to Sending...
+            $('#resumeUploadSubmit').attr({
+                'disabled': 'false',
+                'value': 'Sending...'
+            });
+
+            $('#resumeUploadForm').submit();
+
+            /* using the jquery's post(ajax) function and a lifesaver
+            function serialize() which gets all the data from the form
+            we submit it to send_email.php */
+            /*$.post("emailAttachment.php", $("#resumeUploadForm").serialize(), function (result) {
+                console.log(result);
+                //and after the ajax request ends we check the text returned
+                if (result == 'sent') {
+                    //if the mail is sent remove the submit paragraph
+                    $('#resumeUploadSubmitDiv').remove();
+                    //and show the mail success div with fadeIn
+                    $('#resume-upload-success').fadeIn(500);
+                } else {
+                    //show the mail failed div
+                    $('#resume-upload-fail').fadeIn(500);
+                    //re enable the submit button by removing attribute disabled and change the text back to Send The Message
+                    $('#resumeUploadSubmit').removeAttr('disabled').attr('value', 'Send The Message');
+                }
+            });*/
         }
     });
 	
